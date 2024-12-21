@@ -1,16 +1,16 @@
 -- CreateTable
-CREATE TABLE `Wpis` (
+CREATE TABLE `Kategoria` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `wpis` VARCHAR(191) NOT NULL,
-    `kategoriaId` INTEGER NOT NULL,
+    `nazwa` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Kategoria` (
+CREATE TABLE `Wpis` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `nazwa` VARCHAR(191) NOT NULL,
+    `wpis` VARCHAR(191) NOT NULL,
+    `kategoriaId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -29,3 +29,4 @@ ALTER TABLE `Wpis` ADD CONSTRAINT `Wpis_kategoriaId_fkey` FOREIGN KEY (`kategori
 
 -- AddForeignKey
 ALTER TABLE `Komentarz` ADD CONSTRAINT `Komentarz_wpisId_fkey` FOREIGN KEY (`wpisId`) REFERENCES `Wpis`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
