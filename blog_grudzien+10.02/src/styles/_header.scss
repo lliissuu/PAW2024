@@ -1,0 +1,20 @@
+@import "variables";
+
+.header {
+  background-color: $primary-color;
+  padding: $spacing;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
